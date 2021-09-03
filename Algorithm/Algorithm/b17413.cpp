@@ -45,4 +45,5 @@ int main()
 
 	}
 	Print(s);
+	return 0;
 }
