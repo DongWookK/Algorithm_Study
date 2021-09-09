@@ -15,25 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="b17413.cpp">
+    <ClCompile Include="b3085.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="b10799.cpp">
+    <ClCompile Include="b10972.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="b17298.cpp">
+    <ClCompile Include="b10974.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="b1978.cpp">
+    <ClCompile Include="p신규아이디추천.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="b2960.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b17087.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b8598.cpp">
+    <ClCompile Include="완주하지못한사람.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
