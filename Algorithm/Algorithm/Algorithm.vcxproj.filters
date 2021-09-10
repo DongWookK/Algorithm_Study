@@ -30,5 +30,8 @@
     <ClCompile Include="완주하지못한사람.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="b1260.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
