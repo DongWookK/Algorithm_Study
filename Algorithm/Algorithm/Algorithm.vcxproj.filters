@@ -15,25 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="b1929.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b1748.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b9095.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b14501.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="practice.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="b16929.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="binarySearch.cpp">
+    <ClCompile Include="DP_fibonacci.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
