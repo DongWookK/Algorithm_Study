@@ -16,7 +16,7 @@ int main() {
 
 	//0부터 순회하며
 	//이전것중에 가장 크고 카운트가 큰 애에서 +1
-	for (int i = 0; i < n; i++) {
+	for (int i = 1; i < n; i++) {
 		s[i] = 1;
 		for (int j = 0; j < i; j++) {
 			if (v[j] < v[i] && s[i] < s[j]+1) {
