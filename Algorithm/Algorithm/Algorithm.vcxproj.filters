@@ -24,5 +24,11 @@
     <ClCompile Include="b14002.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="b1149.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="b1932.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
