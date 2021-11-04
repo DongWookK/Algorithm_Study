@@ -30,5 +30,8 @@
     <ClCompile Include="b1932.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Prim_Algorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
