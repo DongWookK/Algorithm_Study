@@ -1,7 +1,7 @@
 #define CRT_Secure_No_Warnings
 #include <iostream>
-#define NODE_MAX 1001
-#define EDGE_MAX 20001
+#define NODE_MAX 100
+#define EDGE_MAX 200001
 using namespace std;
 
 //간선 연결리스트에서 힙으로 저장해 구현
@@ -12,22 +12,22 @@ struct Edge {
 	int node;
 };
 
-struct PriorityQueue {
+struct priorityQueue {
 	Edge* heap[EDGE_MAX];
 	int count;
 };
 
-void Swap(Edge* a, Edge* b) {
-	Edge tmp;
-	tmp.cost = a->cost;
-	tmp.node = a->node;
+void swap(Edge* a, Edge* b) {
+	Edge temp;
+	temp.cost = a->cost;
+	temp.node = a->node;
 	a->cost = b->cost;
-	a->node = b->cost;
-	b->cost = tmp.cost;
-	b->node = tmp.node;
+	a->node = b->node;
+	b->cost = temp.cost;
+	b->node = temp.node;
 }
 
-void push(PriorityQueue* pq, Edge* edge) {
+void push(priorityQueue* pq, Edge* edge) {
 	if (pq->count >= EDGE_MAX) return;
 	pq->heap[pq->count] = edge;
 	int now = pq->count;
@@ -40,22 +40,23 @@ void push(PriorityQueue* pq, Edge* edge) {
 	pq->count++;
 }
 
-Edge* pop(PriorityQueue* pq) {
+Edge* pop(priorityQueue* pq) {
 	if (pq->count <= 0) return NULL;
 	Edge* res = pq->heap[0];
 	pq->count--;
 	pq->heap[0] = pq->heap[pq->count];
 	int now = 0, leftChild = 1, rightChild = 2;
 	int target = now;
+	// 새 원소를 추출한 이후에 하향식으로 힙을 구성합니다.
 	while (leftChild < pq->count) {
 		if (pq->heap[target]->cost > pq->heap[leftChild]->cost) target = leftChild;
-		if (pq->heap[target]->cost > pq->heap[rightChild]->cost) target = rightChild;
-		if (target == now) break; //가장 작을때
+		if (pq->heap[target]->cost > pq->heap[rightChild]->cost && rightChild < pq->count) target = rightChild;
+		if (target == now) break; // 더 이상 내려가지 않아도 될 때 종료
 		else {
 			swap(pq->heap[now], pq->heap[target]);
 			now = target;
 			leftChild = now * 2 + 1;
-			rightChild = now * 2 + 1;
+			rightChild = now * 2 + 2;
 		}
 	}
 	return res;
@@ -87,13 +88,13 @@ int d[NODE_MAX]; //정점의 방문여부 확인
 int main() {
 	int n, m;
 	cin >> n >> m;
-	adj = new Node*[(n + 1)]; //double pointer(노드배열)에 대한 동적할당
+	adj = new Node*[n+1]; //double pointer(노드배열)에 대한 동적할당  //여기가 문제일수도?
 	for (int i = 1; i <= n; i++) {
 		adj[i] = NULL;
 	}
-	PriorityQueue* pq;
+	priorityQueue* pq;
 	//프림알고리즘 내에 사용할 우선순위 큐
-	pq = new PriorityQueue;
+	pq = new priorityQueue;
 	pq->count = 0;
 
 	for (int i = 0; i < m; i++) {
@@ -116,18 +117,20 @@ int main() {
 	//우선순위큐에서 정점(Node)의 개수만큼 반복
 	for (int i = 1; i <= n; i++) {
 		int nextNode = -1, nextCost = INT_MAX;
-		while (1) { //방문하지 않은 노드중에서 비용이 제일 적은 노드를 우선순위큐에서 꺼내줌
+		while (1) { //방문하지 않은 노드중에서 비용이 제일 적은 엣지를 우선순위큐에서 꺼내줌
 			Edge* now = pop(pq);
+			cout << "pqsize:" << pq->count << endl;
 			if (now == NULL)break;
 			nextNode = now->node;
 			if (!d[nextNode]) { //d가 전역변수이므로 기본적으로 0, 방문했다면 1로 되어있음.
-				nextCost = now->cost; break;
+				nextCost = now->cost; 
+				cout << "now cost:" <<nextCost<< endl;
+				break;
 			}
 		}
 		if (nextCost == INT_MAX) cout << "연결 그래프가 아닙니다.\n";
 
 		res += nextCost;
-		cout << nextCost << endl;
 		d[nextCost] = (int)1; //여기랑 여기 밑에 부분 이해 필요
 		Node* cur = adj[nextNode];
 
