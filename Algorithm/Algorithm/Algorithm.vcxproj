@@ -60,6 +60,7 @@
     </ClCompile>
     <ClCompile Include="b1932.cpp" />
     <ClCompile Include="b2225.cpp" />
+    <ClCompile Include="b2529.cpp" />
     <ClCompile Include="b2667.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
