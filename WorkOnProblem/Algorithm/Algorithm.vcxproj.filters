@@ -18,5 +18,8 @@
     <ClCompile Include="155p_picnic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="165P_TSP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
