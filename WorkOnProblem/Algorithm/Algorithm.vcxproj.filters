@@ -21,5 +21,11 @@
     <ClCompile Include="165P_TSP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BOJ_12738_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BOJ_12738_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
